@@ -1,9 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+require 'faker'
 
 FactoryGirl.define do
   factory :evento do
-    nombre "MyString"
-    lugar "MyString"
+    nombre { Faker::Lorem.words }
+    lugar { Faker::Address.city }
     fecha "2013-06-19"
   end
 end
