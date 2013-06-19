@@ -1,5 +1,7 @@
 Rio::Application.routes.draw do
 
+  get "biografia/index"
+
   devise_for :admins
 
   resources :contactos
