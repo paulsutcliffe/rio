@@ -12,14 +12,14 @@ FactoryGirl.create :admin
   FactoryGirl.create :evento
 end
 
-6.albums do
+6.times do
   FactoryGirl.create :album
 end
 
-3.albums do
+3.times do
   FactoryGirl.create :diapositiva
 end
 
-12.albums do
+12.times do
   FactoryGirl.create :contacto
 end

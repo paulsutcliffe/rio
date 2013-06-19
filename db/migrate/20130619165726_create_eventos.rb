@@ -4,8 +4,10 @@ class CreateEventos < ActiveRecord::Migration
       t.string :nombre
       t.string :lugar
       t.date :fecha
+      t.string :slug
 
       t.timestamps
     end
+    add_index :eventos, :slug, unique: true
   end
 end
