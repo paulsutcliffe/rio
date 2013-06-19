@@ -1,0 +1,23 @@
+%h1 Listing eventos
+
+%table
+  %tr
+    %th Nombre
+    %th Lugar
+    %th Fecha
+    %th
+    %th
+    %th
+
+  - @eventos.each do |evento|
+    %tr
+      %td= evento.nombre
+      %td= evento.lugar
+      %td= evento.fecha
+      %td= link_to 'Show', evento
+      %td= link_to 'Edit', edit_evento_path(evento)
+      %td= link_to 'Destroy', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Evento', new_evento_path
