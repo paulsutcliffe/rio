@@ -1,0 +1,24 @@
+%ul
+  %li
+    = link_to_unless_current 'Inicio', root_path do
+      %span Inicio
+
+  %li
+    = link_to_unless_current 'Eventos', eventos_path do
+      %span Eventos
+
+  %li
+    = link_to_unless_current 'Biografía', biografia_index_path do
+      %span Biografía
+
+  %li
+    = link_to_unless_current 'Videos', '' do
+      %span Videos
+
+  %li
+    = link_to_unless_current 'Música', '' do
+      %span Música
+
+  %li
+    = link_to_unless_current 'Contacto', new_contacto_path do
+      %span Contacto

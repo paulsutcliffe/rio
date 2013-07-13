@@ -1,0 +1,37 @@
+body {background: $gray-dark; }
+h1, h2, h3, h4, h5, h6 {color: $yellow; line-height: 100%; margin: 0; text-transform: uppercase; font-family: $font-2; 
+font-weight: 300; letter-spacing: 1px }
+li {list-style: none}
+
+
+header {
+  background-color: $gray-light; margin-bottom: 30px;
+  .container {position: relative; height: 60px}
+}
+
+.menu {
+  @include absolute(bottom, right, 0, 0);
+  ul {
+    text-align: right;
+    li {
+      @include inline-block; margin-left: 20px;
+      a, span {font-family: $font-2; color: white; font-size: $size-menu}
+    }
+  }
+}
+
+
+.proximos-eventos, .contratos {
+  @extend .miniblock; @include inline-block;
+}
+
+.contratos {text-align: right}
+
+.icono {
+  background: $iconos; @include size(20px, 23px); content:""; @include inline-block;
+}
+
+.fecha:before {@extend .icono; background-position: -43px 0}
+.lugar:before {@extend .icono; background-position: -0px 0}
+.nombre:before {@extend .icono; background-position: -83px 0}
+

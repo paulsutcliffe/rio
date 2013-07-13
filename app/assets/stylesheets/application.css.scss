@@ -9,5 +9,17 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+@import "bootstrap";
+//@import "bootstrap-responsive";
+
+@import "variables.css.scss";
+@import "mixins.css.scss";
+@import "layout.css.scss";
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+
