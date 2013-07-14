@@ -1,12 +1,11 @@
-%h1 Listing diapositivas
+%h1 Listando banners
 
 %table
   %tr
-    %th Slide
-    %th Titulo
+    %th Imagen
+    %th Título
     %th Link
     %th Video
-    %th
     %th
     %th
 
@@ -16,10 +15,9 @@
       %td= diapositiva.titulo
       %td= diapositiva.link
       %td= diapositiva.video
-      %td= link_to 'Show', diapositiva
-      %td= link_to 'Edit', edit_diapositiva_path(diapositiva)
-      %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Editar', edit_diapositiva_path(diapositiva)
+      %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
 
 %br
 
-= link_to 'New Diapositiva', new_diapositiva_path
+= link_to 'Nuevo Banner', new_diapositiva_path

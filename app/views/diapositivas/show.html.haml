@@ -1,10 +1,8 @@
-%p#notice= notice
-
 %p
-  %b Slide:
+  %b Imagen:
   = @diapositiva.slide
 %p
-  %b Titulo:
+  %b Título:
   = @diapositiva.titulo
 %p
   %b Link:
@@ -13,6 +11,5 @@
   %b Video:
   = @diapositiva.video
 
-= link_to 'Edit', edit_diapositiva_path(@diapositiva)
-\|
-= link_to 'Back', diapositivas_path
+= link_to 'Editar', edit_diapositiva_path(@diapositiva)
+= link_to 'Regresar', diapositivas_path

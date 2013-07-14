@@ -1,19 +1,23 @@
-%h1 Listing albums
+%h1 Listando álbums
 
 %table
   %tr
-    %th Codigo embed
-    %th
+    %th Título
+    %th Código embed
+    %th Año
+    %th Créditos
     %th
     %th
 
   - @albums.each do |album|
     %tr
-      %td= album.codigo_embed
-      %td= link_to 'Show', album
-      %td= link_to 'Edit', edit_album_path(album)
-      %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= album.titulo
+      %td= raw(album.codigo_embed)
+      %td= album.ano
+      %td= album.creditos
+      %td= link_to 'Editar', edit_album_path(album)
+      %td= link_to 'Eliminar', album, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
 
 %br
 
-= link_to 'New Album', new_album_path
+= link_to 'Nuevo Álbum', new_album_path

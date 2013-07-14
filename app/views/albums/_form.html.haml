@@ -7,7 +7,16 @@
           %li= msg
 
   .field
-    = f.label :codigo_embed
+    = f.label :titulo, "Título"
+    = f.text_field :titulo
+  .field
+    = f.label :codigo_embed, "Código Embed"
     = f.text_field :codigo_embed
+  .field
+    = f.label :ano, "Año"
+    = f.text_field :ano
+  .field
+    = f.label :creditos, "Créditos"
+    = f.text_field :creditos
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar'

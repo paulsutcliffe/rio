@@ -1,3 +1,3 @@
 class Album < ActiveRecord::Base
-  attr_accessible :codigo_embed
+  attr_accessible :titulo, :codigo_embed, :ano, :creditos
 end

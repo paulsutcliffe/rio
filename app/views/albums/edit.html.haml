@@ -1,7 +1,5 @@
-%h1 Editing album
+%h1= 'Editando ' + @album.titulo
 
 = render 'form'
 
-= link_to 'Show', @album
-\|
-= link_to 'Back', albums_path
+= link_to 'Regresar', albums_path

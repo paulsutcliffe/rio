@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Nombre:
   = @contacto.nombre
@@ -7,12 +5,10 @@
   %b Email:
   = @contacto.email
 %p
-  %b Telefono:
+  %b Télefono:
   = @contacto.telefono
 %p
   %b Mensaje:
   = @contacto.mensaje
 
-= link_to 'Edit', edit_contacto_path(@contacto)
-\|
-= link_to 'Back', contactos_path
+= link_to 'Regresar', contactos_path

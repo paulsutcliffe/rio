@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(:version => 20130619170625) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "albums", :force => true do |t|
+    t.string   "titulo"
     t.string   "codigo_embed"
+    t.integer  "ano"
+    t.string   "creditos"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
