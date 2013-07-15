@@ -4,28 +4,84 @@ font-weight: 300; letter-spacing: 1px }
 li {list-style: none}
 
 
-header {
+h1.title,
+h2.title {padding-bottom: 20px}
+
+h1.title:before,
+h2.title:before {@extend .title-icon }
+
+p {@extend .main-paragraph}
+
+
+header.main-header {
   background-color: $gray-light; margin-bottom: 30px;
   .container {position: relative; height: 60px}
 }
 
-.menu {
-  @include absolute(bottom, right, 0, 0);
-  ul {
-    text-align: right;
-    li {
-      @include inline-block; margin-left: 20px;
-      a, span {font-family: $font-2; color: white; font-size: $size-menu}
-    }
+footer.main-footer {
+  background-color: $gray-light;
+  .container {
+    padding-top: 15px; position: relative;
+    .footer-menu, .copyright {float: left; clear: left}
+    a, span, p {@extend .paragraph-small; padding-bottom: 0}
+    .share-website {float: right}
   }
 }
 
+ul.menu {
+    text-align: right; margin: 0;
+    li {
+      @include inline-block; margin-left: 10px;
+      border-bottom: 6px solid transparent;
+      a, span {font-family: $font-2; color: white; font-size: $size-menu; padding: 0 20px 6px; @include inline-block;
+        &:hover {text-decoration: none; color: $yellow}
+      }
+      span {color: $yellow}
+    }
+  .main-header & {
+    @include absolute(bottom, right, 0, 0);
+  }
+  .main-footer & {
+    float: left; margin: 0;
+    li {float: left;
+      margin: 0 20px 0 0;
+      a, span {@extend .paragraph-small}
+    }
+  }
+}
+ul.menu li.backLava {border-color: $yellow}
+
+ul.share-menu {
+  margin: 0; @include absolute(bottom, right, 0, 0);
+  li {float: left; border-radius: 5px 5px 0 0; padding: 5px 5px 30px; margin-left: 5px;
+    a {
+      
+    }
+    &:hover {background: $gray-dark}
+  }
+
+}
+
+#content {
+  .container {
+    position: relative; padding-bottom: 50px
+  }
+  .not-front & {
+    .container {padding-top: 50px}
+  }
+}
 
 .proximos-eventos, .contratos {
   @extend .miniblock; @include inline-block;
+  h2.title {padding-bottom: 0}
 }
 
-.contratos {text-align: right}
+.contratos {
+  text-align: right; @include absolute(top, right, 0, 0);
+  ul {padding-right: 5px}
+  .not-front & li {float: right; margin-left: 10px; padding-bottom: 0} 
+  .email {padding-bottom: 0}
+}
 
 .icono {
   background: $iconos; @include size(20px, 23px); content:""; @include inline-block;
@@ -34,4 +90,89 @@ header {
 .fecha:before {@extend .icono; background-position: -43px 0}
 .lugar:before {@extend .icono; background-position: -0px 0}
 .nombre:before {@extend .icono; background-position: -83px 0}
+.telefono:after {@extend .icono; background-position: -163px 0}
+.celular:after {@extend .icono; background-position: -120px 0}
+.email:after {@extend .icono; background-position: -203px 0}
+
+
+/* CARRUSEL_ */
+.carousel {
+  width: auto; margin-top: 15px; @extend .contorno-default;
+  &:after {@extend .sombra-slider}
+
+  .carousel-control {
+    background: $yellow; opacity: 1; border-radius: 0; top: 45%;
+    border: 0; @include size(60px, 60px); font-size: 100px; line-height: 43%;
+  }
+  .carousel-indicators .active {background: $yellow}
+  .carousel-indicators li {background: white}
+  a {color: white}
+
+}
+
+.imagen-encabezado {
+  position: relative; margin-bottom: 60px;
+  &:after {
+    @extend .sombra-slider;
+  }
+}
+ 
+
+.redes-sociales {
+  .red-social {
+    width: 48%; float: left; min-height: 300px;
+    &.facebook {}
+    &.twitter {float: right}
+    iframe {width: 100%}
+  }
+}
+
+.rio-presentacion {
+  .content {
+    @include box-default-padding; margin: 0 60px;
+  }
+  .not-front & {
+    .content {
+      margin: 30px;
+    }
+  }
+  img {@extend .contorno-default}
+}
+
+#footer-logo {float: left; clear: left}
+
+.rio-youtube {
+  padding: 80px 0 40px;
+  h2.title {
+    text-align: center;
+    font-size: 55px; padding: 0;
+    a {
+      color: $yellow;
+    }
+    &:before {content:""}
+    &:after {content: $play-youtube; position: relative; top: 2px}
+  }
+}
+
+.content {
+  &.integrantes {
+    li {width: 32%; padding-right: 1%; float: left; text-align: center;
+      &.last {padding-right: 0}
+      h3 {@extend .title; @extend .font-size-extreme; padding: 30px 0 0px; text-align: center; font-size: 40px;
+        span {color: white; font-size: 30px; display: block}
+      }
+      .content {
+        @include box-default-padding; p {text-align: center}
+      }
+    }
+  }
+}
+
+/* FULL_WIDTH_ */
+.redes-sociales,
+.rio-presentacion,
+.rio-youtube,
+.footer-top, .footer-bottom,
+.content.integrantes {@include full-width; margin-left: 0}
+
 

@@ -1,24 +1,12 @@
-%ul
-  %li
-    = link_to_unless_current 'Inicio', root_path do
-      %span Inicio
+%ul.menu
 
-  %li
-    = link_to_unless_current 'Eventos', eventos_path do
-      %span Eventos
+  / menu_li(page_name, controller_name, path)
+  = menu_li('Inicio', 'homes', root_path)
+  = menu_li('Eventos', 'eventos', eventos_path)
+  = menu_li('Biografía', 'biografia', biografia_path)
+  = menu_li('Videos', 'videos', 'videos')
+  = menu_li('Música', 'musica', 'musica')
+  = menu_li('Contacto', 'contactos', new_contacto_path )
+  - if current_admin
+    = menu_li('Diapositivas', 'diapositivas', diapositivas_path)
 
-  %li
-    = link_to_unless_current 'Biografía', biografia_index_path do
-      %span Biografía
-
-  %li
-    = link_to_unless_current 'Videos', '' do
-      %span Videos
-
-  %li
-    = link_to_unless_current 'Música', '' do
-      %span Música
-
-  %li
-    = link_to_unless_current 'Contacto', new_contacto_path do
-      %span Contacto

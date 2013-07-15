@@ -8,29 +8,40 @@
     = stylesheet_link_tag "application.css"
     = yield(:css)
     = javascript_include_tag 'application'
-    = #javascript_include_tag 'http://code.jquery.com/jquery-migrate-1.0.0.js'
+    = render 'layouts/lavalamp_menu'
     = csrf_meta_tag
     = yield(:javascript)
     = yield(:head)
 
-  %body
-    %header{:role => 'banner'}
+  %body{id: bodyid, class: bodyclass}
+    %header{:role => 'banner', :class => 'main-header'}
       .container
         %h1
           = link_to image_tag('logo.png', alt: 'Rio'), root_path, id: 'logo'
-        %nav.main-menu.menu
+        %nav.main-menu
           %h6.element-invisible
             Main Navigation
           = render 'layouts/menu'
 
 
-    %section
+    %section#content
       .container
+        .contratos
+          %h2.title Contratos
+          = render 'shared/info_contratos' 
         = yield
 
-    %footer
+    %footer.main-footer
       .container
-
+        .footer-top
+          = link_to image_tag('logo.png', alt: 'Rio'), root_path, id: 'footer-logo'
+          = link_to image_tag('btn-compartir.png'), '/', target: '_blank', class: 'share-website'
+        .footer-bottom
+          = render 'shared/share_links'
+          %nav.footer-menu
+            %h2.element-invisible Footer navigation
+            = render 'layouts/menu'
+          %p.copyright Rio Producciones todos los derechos reservados 2012.
     #container{:style => 'display: none'}
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

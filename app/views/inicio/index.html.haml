@@ -25,16 +25,33 @@
       %td.nombre
         Discoteca Anubis
 
-.contratos
-  %h2.title Contratos
-  %ul
-    %li.telefono
-      21345667
-    %li.celular
-      43*435*4354
-    %li.email
-      manager@rio.com.pe
-
-
-
 = render 'slider'
+
+.redes-sociales
+  %h2.title Síguenos
+  .red-social.facebook
+    = render 'shared/facebook_likebox'
+  .red-social.twitter
+    = render 'shared/twitter_timeline'
+
+.rio-presentacion
+  %h2.title Río
+  .content
+    %p
+      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separa    ted they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. 
+      Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic 
+      life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. 
+      The Big Oxmox advised her not to do so, because there were thousands of bad Commas.
+    %p
+      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+      there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, 
+      a large language ocean.
+      Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic 
+      life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far 
+      World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas.
+
+
+.rio-youtube
+  %h2.title
+    = link_to 'Visita nuestro canal de Youtube', '/', target: '_blank'
+

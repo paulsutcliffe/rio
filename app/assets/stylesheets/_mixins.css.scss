@@ -11,19 +11,61 @@
 
 }
 
+.title {
+  font-size: 30px; 
+}
+
+.title-icon {
+  content: $bg-title; position: relative; top: 15px; margin-right: 10px;
+}
+
+.main-paragraph {
+  font-size: 17px; font-family: $font-1; color: white; line-height: 145%; text-align: justify;
+  padding-bottom: 15px; margin: 0;
+}
+
+.paragraph-small {
+  @extend .main-paragraph;
+  font-size: 15px;
+}
+
+.font-size-extreme {
+  font-size: 58px !important;
+}
+
+.contorno-default {
+  border: 5px solid white;
+}
+
+.sombra-slider {
+  content: $slider-shadow; position: absolute; top: 100%; left: 0
+}
+
+@mixin full-width {
+  width: 100%; float: left; clear: left;
+}
 
 @mixin box-default {
   background: $gray-light; border-radius: 5px;
 }
 
+@mixin box-default-padding {
+  @include box-default;
+  padding: 15px 20px 0;
+}
+
 .miniblock {
-  h2.title {font-size: 17px}
+  h2.title {font-size: 17px;
+    &:before {content:""}
+  }
+  
  
   table, ul { 
-    @include box-default;
+    @include box-default; float: left;
     margin: 5px 0 0; border-collapse: separate; padding: 5px 20px 5px 10px;
-    td, li {list-style: none; color: white; font-family: $font-1; font-size: 16px; min-width: 100px; padding: 0}
-    li {padding-bottom: 3px}
+    td, li {list-style: none; color: white; font-family: $font-1; font-size: 16px; min-width: 100px; padding: 0;
+      a {color: white}
+    }
   } 
 }
 
