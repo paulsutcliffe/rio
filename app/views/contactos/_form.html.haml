@@ -6,17 +6,22 @@
         - @contacto.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :telefono, "Teléfono"
-    = f.text_field :telefono
-  .field
-    = f.label :mensaje
-    = f.text_area :mensaje
-  .actions
-    = f.submit 'Enviar'
+  %fieldset
+    %legend
+      ENVIANOS UN MENSAJE
+    .fields.info
+      .field
+        = f.label :nombre
+        = f.text_field :nombre
+      .field
+        = f.label :email
+        = f.text_field :email
+      .field
+        = f.label :telefono, "Teléfono"
+        = f.text_field :telefono
+    .fields.message
+      .field
+        = f.label :mensaje
+        = f.text_area :mensaje
+      .actions
+        = f.submit 'Enviar'

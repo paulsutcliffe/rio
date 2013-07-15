@@ -154,6 +154,40 @@ ul.share-menu {
   }
 }
 
+.info-manager {
+  padding: 40px 0 20px;
+  h2.title {
+    font-size: 35px; padding-bottom: 10px;
+    &:before {content:""; }
+  }
+  ul {
+    margin: 0;
+    li {@extend .title; font-size: 25px; color: white; padding-bottom: 5px; line-height: 100%;
+      font-family: $font-1; text-transform: uppercase;
+      &.telefono:before {content: $ico-telefono}
+      &.celular:before {content: $ico-celular; margin-left: 2px}
+      &.email:before {content: $ico-email; position: relative; top: 2px}
+
+      &:after {content: ""; display: none}
+      a {color: white; line-height: 100%}
+    }
+  }
+}
+
+form {
+  @include box-default-padding; padding-bottom: 20px;
+  legend {text-align: center; @extend .title}
+  .fields {
+    width: 48%; float: left;
+    &.info {float: left}
+    &.message {float: right}
+    input[type="submit"] {background: $btn-submit; border: 0; padding: 50px 0 0; width: 100px; height: 0; cursor: pointer;
+      overflow: hidden;
+    }
+  }
+}
+
+
 .content {
   &.integrantes {
     li {width: 32%; padding-right: 1%; float: left; text-align: center;
