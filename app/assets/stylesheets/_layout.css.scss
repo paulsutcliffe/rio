@@ -1,11 +1,11 @@
 body {background: $gray-dark; }
-h1, h2, h3, h4, h5, h6 {color: $yellow; line-height: 100%; margin: 0; text-transform: uppercase; font-family: $font-2; 
+h1, h2, h3, h4, h5, h6, legend {color: $yellow; line-height: 100%; margin: 0; text-transform: uppercase; font-family: $font-2; 
 font-weight: 300; letter-spacing: 1px }
 li {list-style: none}
 
 
 h1.title,
-h2.title {padding-bottom: 20px}
+h2.title {padding-bottom: 20px; @extend .title-parameters}
 
 h1.title:before,
 h2.title:before {@extend .title-icon }
@@ -175,15 +175,35 @@ ul.share-menu {
 }
 
 form {
-  @include box-default-padding; padding-bottom: 20px;
-  legend {text-align: center; @extend .title}
+  @include box-default-padding; padding-bottom: 20px; margin: 0 29px 100px;
+  legend {text-align: center; @extend h1.title; border: 0; padding-top: 15px;
+    &:before {content:""}
+    &:after {content: $ico-pencil}
+  }
   .fields {
-    width: 48%; float: left;
-    &.info {float: left}
-    &.message {float: right}
+    width: 40%; float: left;
+    &.info {float: left; padding-left: 10%}
+    &.message {float: right; padding-right: 10%}
     input[type="submit"] {background: $btn-submit; border: 0; padding: 50px 0 0; width: 100px; height: 0; cursor: pointer;
       overflow: hidden;
     }
+  }
+  .field {
+    @include full-width;
+    label {@extend .main-paragraph; text-transform: uppercase; float: left; width: 80px; text-align: right; padding-right: 15px;
+      padding-bottom: 0; margin-top: 6px}
+    input[type="text"], input[type="password"], input[type="email"] {
+      border: 0; background: $form; outline: 0; border: 0;
+      height: auto; padding: 9px 15px 10px 10px;
+      &:focus {background-position: -254px 0}
+    }
+    textarea {background: $form; background-position: -5px -40px; max-height: 120px; padding: 9px 15px 10px 10px; outline: 0; border: 0;
+      resize: none;
+    }
+  }
+  .actions {
+    @include full-width;
+    input {float: right; margin-right: 30px}
   }
 }
 
