@@ -1,6 +1,22 @@
-%h1 Listando eventos
+%h1.title
+  = page_title! 'Eventos'
 
-%table
+
+- if current_admin
+  .administrate.head
+    = link_to 'Nuevo Evento', new_evento_path
+
+%table.content.eventos
+  - @eventos.each do |evento|
+    %tr
+      %td.evento-fecha
+        .dia= l evento.fecha, :format => :day_numeric
+        .mes= l evento.fecha, :format => :month
+      %td.evento-info
+        %span.ev-nombre= evento.nombre
+        %span.ev-lugar= evento.lugar 
+
+%table{:style => 'display: none'}
   %tr
     %th Nombre
     %th Ciudad
@@ -18,4 +34,4 @@
 
 %br
 
-= link_to 'Nuevo Evento', new_evento_path
+

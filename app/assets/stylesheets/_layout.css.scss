@@ -174,8 +174,35 @@ ul.share-menu {
   }
 }
 
+.eventos {
+  width: 100%;
+  .evento-fecha {
+    width: 60px; float: left;
+    @include box-default-padding; padding-bottom: 20px; color: $yellow; text-transform: uppercase; text-align: center;
+    font-family: $font-1; line-height: 100%;
+    .dia {font-size: 50px; line-height: 100%}
+    .mes {font-size: 20px; line-height: 100%}
+  }
+  .evento-info {
+    width: 85%;
+    span {display: block; color: white; font-family: $font-1; line-height: 100%; text-transform: uppercase}
+    .ev-nombre {font-size: 40px;
+      &:before {content: $ico-ev-nombre; position: relative; top: 3px; margin-right: 5px}
+    }
+    .ev-lugar {font-size: 17px;
+      &:before {content: $ico-ev-lugar; position: relative; top: 6px; margin: 0 14px 0 5px}
+    }
+  }
+
+  tr {border-bottom: 25px solid transparent;
+    td {padding: 0}
+  }
+}
+
 form {
-  @include box-default-padding; padding-bottom: 20px; margin: 0 29px 100px;
+  @include box-default-padding;  margin: 0 29px 100px; float: left; 
+  #contactos & {width: 90%; padding: 15px 5% 20px}
+
   legend {text-align: center; @extend h1.title; border: 0; padding-top: 15px;
     &:before {content:""}
     &:after {content: $ico-pencil}
@@ -191,7 +218,9 @@ form {
   .field {
     @include full-width;
     label {@extend .main-paragraph; text-transform: uppercase; float: left; width: 80px; text-align: right; padding-right: 15px;
-      padding-bottom: 0; margin-top: 6px}
+      padding-bottom: 0; margin-top: 6px;
+    }
+    &.checkbox label {width: auto}
     input[type="text"], input[type="password"], input[type="email"] {
       border: 0; background: $form; outline: 0; border: 0;
       height: auto; padding: 9px 15px 10px 10px;
@@ -206,6 +235,8 @@ form {
     input {float: right; margin-right: 30px}
   }
 }
+
+body[id^="devise"] form br {display: none}
 
 
 .content {
