@@ -141,6 +141,7 @@ ul.share-menu {
 
 #footer-logo {float: left; clear: left}
 
+.eventos-pasados,
 .rio-youtube {
   padding: 80px 0 40px;
   h2.title {
@@ -163,7 +164,7 @@ ul.share-menu {
   ul {
     margin: 0;
     li {@extend .title; font-size: 25px; color: $white; padding-bottom: 5px; line-height: 100%;
-      font-family: $font-1; text-transform: uppercase;
+      font-family: $font-2; text-transform: uppercase;
       &.telefono:before {content: $ico-telefono}
       &.celular:before {content: $ico-celular; margin-left: 2px}
       &.email:before {content: $ico-email; position: relative; top: 2px}
@@ -198,6 +199,34 @@ ul.share-menu {
     td {padding: 0}
   }
 }
+
+.eventos-pasados {
+  &.primary {
+    padding: 0; @include absolute(top, right, 75px, 0);
+    h2.title {font-size: 30px;
+      &:after {content: $ico-ev-pas-1; top: 0px}
+    }
+  }
+  &.secondary {
+
+  }
+}
+
+.content.album {
+  li {
+    padding-bottom: 55px; 
+    .head {
+      h2.title {
+        @include inline-block; padding-bottom: 0; vertical-align: bottom; font-size: 57px;
+        &:before{ content: $bg-title-musica; top: 2px} 
+      }
+      .year {
+        font-size: 30px; color: $white; 
+      }
+    }
+  }
+}
+
 
 form {
   @include box-default-padding;  margin: 0 29px 100px; float: left; 
@@ -252,6 +281,8 @@ body[id^="devise"] form br {display: none}
     }
   }
 }
+
+
 
 /* FULL_WIDTH_ */
 .redes-sociales,
