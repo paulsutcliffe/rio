@@ -1,6 +1,6 @@
 class Evento < ActiveRecord::Base
   attr_accessible :fecha, :lugar, :nombre
-  extend FriendlyId
-  friendly_id :nombre, use: :slugged
 
+  scope :proximos, lambda { where("fecha >= ?", Time.now) }
+  scope :pasados, lambda { where("fecha < ?", Time.now) }
 end

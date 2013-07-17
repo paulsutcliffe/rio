@@ -1,6 +1,6 @@
 .eventos-pasados.primary
   %h2.title
-    = link_to 'ver eventos pasados', '/', target: '_blank'
+    = link_to 'ver eventos pasados', eventos_pasados_path
 
 %h1.title
   = page_title! 'Próximos Eventos'
@@ -18,11 +18,11 @@
         .mes= l evento.fecha, :format => :month
       %td.evento-info
         %span.ev-nombre= evento.nombre
-        %span.ev-lugar= evento.lugar 
+        %span.ev-lugar= evento.lugar
 
 .eventos-pasados.secondary
   %h2.title
-    = link_to 'ver eventos pasados', '/', target: '_blank'
+    = link_to 'ver eventos pasados', eventos_pasados_path
 
 
 %table{:style => 'display: none'}

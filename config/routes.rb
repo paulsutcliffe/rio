@@ -4,13 +4,19 @@ Rio::Application.routes.draw do
 
   devise_for :admins
 
-  resources :contactos
+  scope(path_names: { new: 'nuevo', edit: 'editar' }) do
 
-  resources :diapositivas
+    resources :contactos
 
-  resources :albums
+    resources :diapositivas
 
-  resources :eventos
+    resources :albums
+
+    match "/eventos_pasados" => "eventos#index", :pasados => 1
+
+    resources :eventos
+
+  end
 
   root to: 'inicio#index'
 
