@@ -2,9 +2,25 @@
 %html
 
   %head
-    %title
-      = yield(:title) || "Untitled"
+    %title= page_title
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    == <meta name="keywords" content="banda de rock peruano, grupo rio, rock ochentas peru" />
+    == <meta name="description" content="Rio es una de las bandas más representativas del rock peruano. Con más de 29 años de trayectoria ininterrumpida en los escenarios." />
+    == <meta name="googlebot" content="index,follow" />
+    == <meta name="robots" content="index,follow" />
+    == <meta name="Revisit-After" content="7 days" />
+    == <meta name="city" content="Lima" />
+    == <meta name="country" content="Peru" />
+    == <meta name="state" content="Lima" />
+    == <meta name="subject" content="Music" />
+    == <meta name="author" content="RIO Producciones" />
+    == <meta name="copyright" content="RIO &copy; Todos los derechos reservados." />
+    == <meta name="geo.placename" content="Lima, Peru" />
+    == <meta name="geo.region" content="PE-Lima" />
+    == <meta name="author" content="humans.txt" />
+
+    = favicon_link_tag 'favicon.png'
+
     = stylesheet_link_tag "application.css"
     = yield(:css)
     = javascript_include_tag 'application'
@@ -28,7 +44,7 @@
       .container
         .contratos
           %h2.title Contratos
-          = render 'shared/info_contratos' 
+          = render 'shared/info_contratos'
         = yield
 
     %footer.main-footer
