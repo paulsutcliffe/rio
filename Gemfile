@@ -55,3 +55,5 @@ gem "database_cleaner", "~> 0.9.1", :group => :test
 gem "launchy", "~> 2.2.0", :group => :test
 gem "rspec-rails", "~> 2.13.0", :group => [:test, :development]
 gem "factory_girl_rails", "~> 4.2.1", :group => [:test, :development]
+
+gem "auto_html"

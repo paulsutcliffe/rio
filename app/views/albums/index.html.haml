@@ -9,14 +9,14 @@
 %ul.content.album
   - @albums.each do |album|
     %li
-      .head 
+      .head
         %h2.title
           = album.titulo
           %b.year= album.ano
-      %p 
-        = album.creditos 
-      
-      = raw(album.codigo_embed)
+      %p
+        = album.creditos
+
+      = album.codigo_embed_html
 
 
 %table{:style => 'display: none'}
