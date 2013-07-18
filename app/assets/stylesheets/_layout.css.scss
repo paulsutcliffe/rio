@@ -72,7 +72,7 @@ ul.share-menu {
 }
 
 .proximos-eventos, .contratos {
-  @extend .miniblock; @include inline-block;
+  @extend .miniblock; @include inline-block; min-height: 100px;
   h2.title {padding-bottom: 0}
 }
 
