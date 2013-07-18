@@ -295,4 +295,7 @@ body[id^="devise"] form br {display: none}
 .footer-top, .footer-bottom,
 .content.integrantes {@include full-width; margin-left: 0}
 
-
+.cms-admin {@include absolute(top, right, 0, 20px);
+  a {
+  }
+}
