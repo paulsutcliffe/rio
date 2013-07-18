@@ -34,6 +34,8 @@
       .container
         %h1
           = link_to image_tag('logo.png', alt: 'Rio'), root_path, id: 'logo'
+        - if current_admin
+          = render 'layouts/cerrar_sesion'
         %nav.main-menu
           %h6.element-invisible
             Main Navigation
