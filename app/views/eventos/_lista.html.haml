@@ -1,0 +1,29 @@
+- if current_admin
+  .administrate.head
+    = link_to 'Nuevo Evento', new_evento_path
+
+%table.content.eventos
+  - @eventos.each do |evento|
+    %tr
+      %td.evento-fecha
+        .dia= l evento.fecha, :format => :day_numeric
+        .mes= l evento.fecha, :format => :month
+      %td.evento-info
+        %span.ev-nombre= evento.nombre
+        %span.ev-lugar= evento.lugar
+
+%table{:style => 'display: none'}
+  %tr
+    %th Nombre
+    %th Ciudad
+    %th Fecha
+    %th
+    %th
+
+  - @eventos.each do |evento|
+    %tr
+      %td= evento.nombre
+      %td= evento.lugar
+      %td= evento.fecha
+      %td= link_to 'Editar', edit_evento_path(evento)
+      %td= link_to 'Eliminar', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }

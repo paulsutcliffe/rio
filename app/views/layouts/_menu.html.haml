@@ -1,12 +1,15 @@
 %ul.menu
 
-  / menu_li(page_name, controller_name, path)
   = menu_li('Inicio', 'homes', root_path)
   = menu_li('Eventos', 'eventos', eventos_path)
-  = menu_li('Biografía', 'biografia', biografia_path)
-  = menu_li('Videos', 'videos', 'https://www.youtube.com/user/RioOficial')
+  - unless current_admin
+    = menu_li('Biografía', 'biografia', biografia_path)
+    = menu_li('Videos', 'videos', 'https://www.youtube.com/user/RioOficial')
   = menu_li('Música', 'musica', albums_path)
-  = menu_li('Contacto', 'contactos', new_contacto_path )
+  - unless current_admin
+    = menu_li('Contacto', 'contactos', new_contacto_path )
   - if current_admin
-    = menu_li('Diapositivas', 'diapositivas', diapositivas_path)
-
+    = menu_li('Mensajes', 'mensajes', contactos_path )
+    = menu_li('Banners', 'Banners', diapositivas_path)
+    %li
+      = link_to 'Cerrar Sesión', destroy_admin_session_path, method: :delete

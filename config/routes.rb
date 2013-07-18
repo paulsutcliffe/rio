@@ -2,7 +2,7 @@ Rio::Application.routes.draw do
 
   match "/biografia" => "biografia#index"
 
-  devise_for :admins
+  devise_for :admins, :path => "cms", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
 
@@ -12,7 +12,7 @@ Rio::Application.routes.draw do
 
     resources :albums
 
-    match "/eventos_pasados" => "eventos#index", :pasados => 1
+    match "/eventos_pasados" => "eventos#eventos_pasados"
 
     resources :eventos
 
