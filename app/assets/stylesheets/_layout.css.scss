@@ -72,9 +72,11 @@ ul.share-menu {
 }
 
 .proximos-eventos, .contratos {
-  @extend .miniblock; @include inline-block; min-height: 100px;
+  @extend .miniblock; @include inline-block;
   h2.title {padding-bottom: 0}
 }
+
+.proximos-eventos { min-height: 100px}
 
 .contratos {
   text-align: right; @include absolute(top, right, 0, 0);
@@ -178,7 +180,7 @@ ul.share-menu {
 .eventos {
   width: 100%;
   .evento-fecha {
-    width: 60px; float: left;
+    min-width: 60px; float: left;
     @include box-default-padding; padding-bottom: 20px; color: $yellow; text-transform: uppercase; text-align: center;
     font-family: $font-1; line-height: 100%;
     .dia {font-size: 50px; line-height: 100%}
