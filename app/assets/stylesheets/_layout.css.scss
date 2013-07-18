@@ -210,7 +210,9 @@ ul.share-menu {
     }
   }
   &.secondary {
-
+    h2.title {
+      &:after {content: $ico-ev-pas-2}
+    }
   }
 }
 
