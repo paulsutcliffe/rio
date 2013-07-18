@@ -12,6 +12,8 @@
         %span.ev-nombre= evento.nombre
         %span.ev-lugar= evento.lugar
 
+= will_paginate @eventos
+
 %table{:style => 'display: none'}
   %tr
     %th Nombre

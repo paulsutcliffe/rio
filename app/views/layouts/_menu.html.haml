@@ -4,7 +4,8 @@
   = menu_li('Eventos', 'eventos', eventos_path)
   - unless current_admin
     = menu_li('Biografía', 'biografia', biografia_path)
-    = menu_li('Videos', 'videos', 'https://www.youtube.com/user/RioOficial')
+    %li
+      = link_to 'Videos', 'https://www.youtube.com/user/RioOficial', target: '_blank'
   = menu_li('Música', 'musica', albums_path)
   - unless current_admin
     = menu_li('Contacto', 'contactos', new_contacto_path )

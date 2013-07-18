@@ -21,8 +21,7 @@ class ContactosController < InheritedResources::Base
     end
   end
 
-  protected
-    def collection
-      @contactos ||= end_of_association_chain.paginate(:page => params[:page], :per_page => 30)
-    end
+  def index
+    @contactos = Contacto.order("created_at ASC").paginate(:page => params[:page], :per_page => 30)
+  end
 end

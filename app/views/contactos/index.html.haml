@@ -17,3 +17,5 @@
       %td= contacto.mensaje
       %td= link_to 'Ver', contacto
       %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
+
+= will_paginate @contactos
