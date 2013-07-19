@@ -1,5 +1,5 @@
 body {background: $gray-dark; }
-h1, h2, h3, h4, h5, h6, legend {color: $yellow; line-height: 100%; margin: 0; text-transform: uppercase; font-family: $font-2; 
+h1, h2, h3, h4, h5, h6, legend {color: $yellow; line-height: 100%; margin: 0; text-transform: uppercase; font-family: $font-2;
 font-weight: 300; letter-spacing: 1px }
 li {list-style: none}
 
@@ -55,7 +55,7 @@ ul.share-menu {
   margin: 0; @include absolute(bottom, right, 0, 0);
   li {float: left; border-radius: 5px 5px 0 0; padding: 5px 5px 30px; margin-left: 5px;
     a {
-      
+
     }
     &:hover {background: $gray-dark}
   }
@@ -81,7 +81,7 @@ ul.share-menu {
 .contratos {
   text-align: right; @include absolute(top, right, 0, 0);
   ul {padding-right: 5px}
-  .not-front & li {float: right; margin-left: 10px; padding-bottom: 0} 
+  .not-front & li {float: right; margin-left: 10px; padding-bottom: 0}
   .email {padding-bottom: 0}
 }
 
@@ -118,22 +118,21 @@ ul.share-menu {
     @extend .sombra-slider;
   }
 }
- 
+
 
 .redes-sociales {
   .red-social {
-    width: 48%; float: left; min-height: 300px;
-    &.facebook {background: $yellow}
-    &.twitter {float: right; background: $yellow}
+    width: 48%; float: left; min-height: 500px;
+    &.facebook { @include social-box; padding: 5px; }
+    &.twitter {float: right; @include social-box; padding: 15px 5px 5px 5px; }
     iframe {width: 100%}
   }
 
-.thm-dark {background-color: transparent}
 }
 
-.thm-dark {background-color: transparent !important}
 .pluginSkinDark a {color: $gray}
 
+.messageBody { font-family: $font-1;}
 
 .rio-presentacion {
   .content {
@@ -225,14 +224,14 @@ ul.share-menu {
 
 .content.album {
   li {
-    padding-bottom: 55px; 
+    padding-bottom: 55px;
     .head {
       h2.title {
         @include inline-block; padding-bottom: 0; vertical-align: bottom; font-size: 57px;
-        &:before{ content: $bg-title-musica; top: 2px} 
+        &:before{ content: $bg-title-musica; top: 2px}
       }
       .year {
-        font-size: 30px; color: $white; 
+        font-size: 30px; color: $white;
       }
     }
   }
@@ -240,7 +239,7 @@ ul.share-menu {
 
 
 form {
-  @include box-default-padding;  margin: 0 29px 100px; float: left; 
+  @include box-default-padding;  margin: 0 29px 100px; float: left;
   #contactos & {width: 90%; padding: 15px 5% 20px}
 
   legend {text-align: center; @extend h1.title; border: 0; padding-top: 15px;
@@ -335,3 +334,13 @@ btn btn-link
 }
 
 #eventos .administrate.iterate {margin-left: 48px; margin-top: 5px}
+
+.tweets { height: 531px; overflow: hidden; }
+.tweet { overflow: hidden; clear: both; text-align: left; margin-bottom: 16px; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-left: 8px; margin-right: 8px; }
+.tweet.first { border: none; margin-bottom: 0px; }
+.tweet_foto { float: left; margin-right: 8px; }
+.tweet_text { color: #333333; font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; float: left; font-size: 13px; width: 292px; line-height: 16px; }
+.tweet_text a { color: #000; }
+.tweet_text a:hover { color: #B64926; }
+.tweet_text a.profile { color: #3B5998; text-decoration: none; font-weight: bold; }
+.tweet_text span { display: block; color: #999999; }

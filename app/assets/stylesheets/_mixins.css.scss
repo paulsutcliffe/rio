@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-size: 30px; 
+  font-size: 30px;
 }
 
 .title-parameters {
@@ -53,6 +53,10 @@
   background: $gray-light; border-radius: 5px;
 }
 
+@mixin social-box {
+  background: $gold; border-radius: 5px;
+}
+
 @mixin box-default-padding {
   @include box-default;
   padding: 15px 20px 0;
@@ -62,15 +66,15 @@
   h2.title {font-size: 17px;
     &:before {content:""}
   }
-  
- 
-  table, ul { 
+
+
+  table, ul {
     @include box-default; float: left;
     margin: 5px 0 0; border-collapse: separate; padding: 5px 20px 5px 10px;
     td, li {list-style: none; color: $white; font-family: $font-1; font-size: 16px; min-width: 100px; padding: 0;
       a {color: $white}
     }
-  } 
+  }
 }
 
 
@@ -137,7 +141,7 @@
   -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
   behavior: url(/assets/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc);
 
-  /* content-box 
+  /* content-box
     border-box */
 }
 

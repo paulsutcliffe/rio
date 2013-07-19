@@ -1,0 +1,12 @@
+- content_for :javascript do
+  = javascript_include_tag "twitlive-min.js"
+
+:javascript
+  $(document).ready(function() {
+    $(".tweets").liveTweets({
+       operator: "@RioOficialPeru",
+       liveTweetsToken: "sRjKs7TxL9vHTRg4YP8qoTThanupULMRTQsEXXFSX4"
+    });
+  });
+
+.tweets
