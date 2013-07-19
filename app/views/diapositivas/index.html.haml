@@ -1,4 +1,10 @@
-%h1 Listando banners
+%h1.title
+  = page_title! 'Banners'
+
+
+- if current_admin
+  .administrate.head
+    = link_to 'Nuevo Banner', new_diapositiva_path, class: 'button-create'
 
 %table
   %tr
@@ -11,13 +17,11 @@
 
   - @diapositivas.each do |diapositiva|
     %tr
-      %td= diapositiva.slide
+      %td= image_tag diapositiva.slide_url(:thumb)
       %td= diapositiva.titulo
       %td= diapositiva.link
       %td= diapositiva.video
-      %td= link_to 'Editar', edit_diapositiva_path(diapositiva)
-      %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
+      %td= link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'button-create'
+      %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
 
-%br
 
-= link_to 'Nuevo Banner', new_diapositiva_path

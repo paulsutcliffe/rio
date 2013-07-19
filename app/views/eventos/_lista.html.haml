@@ -1,6 +1,6 @@
 - if current_admin
   .administrate.head
-    = link_to 'Nuevo Evento', new_evento_path
+    = link_to 'Nuevo Evento', new_evento_path, class: 'button-create'
 
 %table.content.eventos
   - @eventos.each do |evento|
@@ -11,21 +11,11 @@
       %td.evento-info
         %span.ev-nombre= evento.nombre
         %span.ev-lugar= evento.lugar
+        - if current_admin
+          .administrate.iterate
+            = link_to 'Editar', edit_evento_path(evento), class: 'button-create'
+            = link_to 'Eliminar', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
 = will_paginate @eventos
 
-%table{:style => 'display: none'}
-  %tr
-    %th Nombre
-    %th Ciudad
-    %th Fecha
-    %th
-    %th
 
-  - @eventos.each do |evento|
-    %tr
-      %td= evento.nombre
-      %td= evento.lugar
-      %td= evento.fecha
-      %td= link_to 'Editar', edit_evento_path(evento)
-      %td= link_to 'Eliminar', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }

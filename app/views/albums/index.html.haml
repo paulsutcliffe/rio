@@ -4,7 +4,7 @@
 
 - if current_admin
   .administrate.head
-    = link_to 'Nuevo Álbum', new_album_path
+    = link_to 'Nuevo Álbum', new_album_path, class: 'button-create'
 
 %ul.content.album
   - @albums.each do |album|
@@ -15,25 +15,10 @@
           %b.year= album.ano
       %p
         = album.creditos
-
       = album.codigo_embed_html
+      - if current_admin
+        .administrate.iterate
+          = link_to 'Editar', edit_album_path(album), class: 'button-create'
+          = link_to 'Eliminar', album, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
 
-
-%table{:style => 'display: none'}
-  %tr
-    %th Título
-    %th Código embed
-    %th Año
-    %th Créditos
-    %th
-    %th
-
-  - @albums.each do |album|
-    %tr
-      %td= album.titulo
-      %td= raw(album.codigo_embed)
-      %td= album.ano
-      %td= album.creditos
-      %td= link_to 'Editar', edit_album_path(album)
-      %td= link_to 'Eliminar', album, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
 

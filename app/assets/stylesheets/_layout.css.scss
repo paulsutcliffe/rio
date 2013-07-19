@@ -272,7 +272,7 @@ form {
   }
   .actions {
     @include full-width;
-    input {float: right; margin-right: 5px}
+    input {float: right; margin-right: 8px}
   }
 }
 
@@ -306,3 +306,32 @@ body[id^="devise"] form br {display: none}
   a {
   }
 }
+
+
+// buttons
+.button-create {@extend .btn; @extend .btn-default; @extend .btn-primary}
+.button-update {@extend .btn; @extend .btn-default; @extend .btn-info; margin-right: 5px}
+.button-delete {@extend .btn; @extend .btn-default; @extend .btn-warning}
+.button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-back-cms {@extend .btn; @extend .btn-default; @extend .btn-inverse; margin-top: 20px}
+.link-more {}
+
+/*
+btn btn-primary
+btn btn-info
+btn btn-success
+btn btn-warning
+btn btn-danger
+btn btn-inverse
+btn btn-link
+*/
+
+
+
+.administrate {
+  &.head {margin: 0 0 30px 65px}
+  &.iterate {}
+}
+
+#eventos .administrate.iterate {margin-left: 48px; margin-top: 5px}
