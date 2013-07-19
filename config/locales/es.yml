@@ -1,6 +1,9 @@
 es:
   app:
-    name: "Globalvet"
+    name: "RIO"
+  inicio:
+    index:
+      title: "Página web Oficial"
 
   date:
     abbr_day_names:
