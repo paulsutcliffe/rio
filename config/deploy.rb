@@ -1,3 +1,4 @@
+# coding: utf-8
 require "bundler/capistrano"
 require "rvm/capistrano"
 
@@ -44,12 +45,12 @@ namespace :deploy do
     set :db_pass, Capistrano::CLI.password_prompt("Password: ")
     set :db_name, Capistrano::CLI.ui.ask("Database name: ")
 
-    run "mysql --user=root --password=#{root_password} -e "CREATE DATABASE IF NOT EXISTS #{db_name}""
-    run "mysql --user=root --password=#{root_password} -e "GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION""
+    run "mysql --user=root --password=#{root_password} -e \"CREATE DATABASE IF NOT EXISTS #{db_name}\""
+    run "mysql --user=root --password=#{root_password} -e \"GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION\""
   end
 
   task :setup_config, roles: :app do
-    if File.exist? ""/etc/nginx/sites-enabled/default"
+    if File.exist? "/etc/nginx/sites-enabled/default"
       sudo "rm /etc/nginx/sites-enabled/default"
     end
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
