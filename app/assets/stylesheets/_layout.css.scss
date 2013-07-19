@@ -123,11 +123,17 @@ ul.share-menu {
 .redes-sociales {
   .red-social {
     width: 48%; float: left; min-height: 300px;
-    &.facebook {}
-    &.twitter {float: right}
+    &.facebook {background: $yellow}
+    &.twitter {float: right; background: $yellow}
     iframe {width: 100%}
   }
+
+.thm-dark {background-color: transparent}
 }
+
+.thm-dark {background-color: transparent !important}
+.pluginSkinDark a {color: $gray}
+
 
 .rio-presentacion {
   .content {
@@ -180,20 +186,21 @@ ul.share-menu {
 .eventos {
   width: 100%;
   .evento-fecha {
-    min-width: 60px; float: left;
-    @include box-default-padding; padding-bottom: 20px; color: $yellow; text-transform: uppercase; text-align: center;
+    width: 110px; float: left;
+    @include box-default-padding; padding: 15px 0 20px; color: $yellow; text-transform: uppercase; text-align: center;
     font-family: $font-1; line-height: 100%;
     .dia {font-size: 50px; line-height: 100%}
     .mes {font-size: 20px; line-height: 100%}
   }
   .evento-info {
     width: 85%;
-    span {display: block; color: $white; font-family: $font-1; line-height: 100%; text-transform: uppercase}
+    span {display: block; color: $white; position: relative; padding-left: 50px;
+    font-family: $font-1; line-height: 100%; text-transform: uppercase}
     .ev-nombre {font-size: 40px;
-      &:before {content: $ico-ev-nombre; position: relative; top: 3px; margin-right: 5px}
+      &:before {content: $ico-ev-nombre; margin-right: 5px; @include absolute(top, left, 3px, 0)}
     }
     .ev-lugar {font-size: 17px;
-      &:before {content: $ico-ev-lugar; position: relative; top: 6px; margin: 0 14px 0 5px}
+      &:before {content: $ico-ev-lugar; margin: 2px 14px 0 5px; @include absolute(top, left, -3px, 0)}
     }
   }
 
