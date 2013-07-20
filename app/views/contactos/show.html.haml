@@ -1,14 +1,21 @@
-%p
-  %b Nombre:
-  = @contacto.nombre
-%p
-  %b Email:
-  = @contacto.email
-%p
-  %b Télefono:
-  = @contacto.telefono
-%p
-  %b Mensaje:
-  = @contacto.mensaje
+%h1.title
+  = page_title! @contacto.nombre
 
-= link_to 'Regresar', contactos_path
+
+.content-default
+  .contacto-block
+    %b Email:
+    %span
+      = @contacto.email
+    %span.separar 
+      |
+    %b Télefono:
+    
+    %span
+      = @contacto.telefono
+  .contacto-block
+    %b Mensaje 
+    .contacto-mensaje-inner
+      = @contacto.mensaje
+
+= link_to 'Regresar', contactos_path, :class => 'button-back'

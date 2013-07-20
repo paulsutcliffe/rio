@@ -370,3 +370,14 @@ btn btn-link
 .table-striped tbody > tr:nth-child(2n+1) > td {
   background-color: $gray-light; color: $white;
 }
+
+.table th, .table td {border: 0; font-family: $font-1; vertical-align: middle}
+
+.label, .badge {font-size: 13px; font-weight: normal}
+.td-nombre {min-width: 220px}
+
+.contacto-block {@include box-default; padding: 10px; margin-bottom: 25px; margin-left: 68px; color: $white;
+  b {color: $yellow; text-transform: uppercase}
+  .separar {margin: 20px}
+}
+#contactos .button-back {margin-left: 68px}

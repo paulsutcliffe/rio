@@ -1,7 +1,7 @@
 %h1.title
   = page_title! 'Mensajes Recibidos'
 
-%table.table.table-bordered.table-condensed.table-hover.table-striped
+%table.table.table-condensed.table-hover.table-striped
   %tr
     %th Nombre
     %th Email
@@ -12,9 +12,11 @@
 
   - @contactos.each do |contacto|
     %tr
-      %td= contacto.nombre
-      %td= contacto.email
-      %td= contacto.telefono
+      %td.td-nombre= contacto.nombre
+      %td 
+        %span.label.label-info= contacto.email
+      %td
+        %span.label.label-info= contacto.telefono
       %td= truncate(contacto.mensaje, :length => 20)
       %td= link_to 'Ver', contacto, :class => 'button-readmore'
       %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, :class => 'button-delete'
