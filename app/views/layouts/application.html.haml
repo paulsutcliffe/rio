@@ -1,6 +1,12 @@
-!!!
-%html
-
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7] <html class="no-js ie6 lt-ie9 lt-ie8 lt-ie7 lt-ie10 ie" lang="en">
+/[if IE 7] <html class="no-js ie7 lt-ie9 lt-ie8 lt-ie10 ie" lang="en">
+/[if IE 8] <html class="no-js ie8 lt-ie9 lt-ie10" lang="en">
+/[if IE 9] <html class="no-js ie9 lt-ie10" lang="en">
+/ Consider adding a manifest.appcache: h5bp.com/d/Offline
+/ [if gt IE 9]><!
+%html.no-js.gt-ie9.non-ie{:lang => "en"}
+  / <![endif]
   %head
     %title= page_title
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
@@ -23,6 +29,8 @@
 
     = stylesheet_link_tag "application.css"
     = yield(:css)
+    = stylesheet_link_tag 'http://www.arcomega.pe/css-rails/ie-rio.css'
+
     = javascript_include_tag 'application'
     = render 'layouts/lavalamp_menu'
     = csrf_meta_tag
