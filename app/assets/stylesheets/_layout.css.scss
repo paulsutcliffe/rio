@@ -3,6 +3,7 @@ h1, h2, h3, h4, h5, h6, legend {color: $yellow; line-height: 100%; margin: 0; te
 font-weight: 300; letter-spacing: 1px }
 li {list-style: none}
 
+form .field input[type="text"], form .field input[type="password"], form .field input[type="email"] {box-shadow: 0 0 0 transparent}
 
 h1.title,
 h2.title {padding-bottom: 20px; @extend .title-parameters}
@@ -239,7 +240,7 @@ ul.share-menu {
 
 
 form {
-  @include box-default-padding;  margin: 0 29px 100px; float: left;
+  @include box-default-padding; padding-bottom: 20px; margin: 0 29px 100px; float: left;
   #contactos & {width: 90%; padding: 15px 5% 20px}
 
   legend {text-align: center; @extend h1.title; border: 0; padding-top: 15px;
@@ -271,12 +272,13 @@ form {
   }
   .actions {
     @include full-width;
-    input {float: right; margin-right: 8px}
+    input {float: right; margin-right: 0px}
   }
 }
 
 body[id^="devise"] form br {display: none}
-
+select {width: auto; min-width: 100px}
+#contactos.new form .actions input {margin-right: 8px}
 
 .content {
   &.integrantes {
@@ -313,8 +315,9 @@ body[id^="devise"] form br {display: none}
 .button-update {@extend .btn; @extend .btn-default; @extend .btn-info; margin-right: 5px}
 .button-delete {@extend .btn; @extend .btn-default; @extend .btn-warning}
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
-.button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo; margin-bottom: 10px}
 .button-back-cms {@extend .btn; @extend .btn-default; @extend .btn-inverse; margin-top: 20px}
+input[type="submit"] {@extend .btn; @extend .btn-success}
 .link-more {}
 
 /*
@@ -380,4 +383,20 @@ btn btn-link
   b {color: $yellow; text-transform: uppercase}
   .separar {margin: 20px}
 }
+
+
+.new form,
+.edit form,
+.content-default li,
 #contactos .button-back {margin-left: 68px}
+
+
+.edit .field input[type="text"],
+.new .field input[type="text"],
+.edit .field input[type="email"],
+.new .field input[type="email"],
+.edit .field input[type="password"],
+.new .field input[type="password"] {
+  width: 235px;
+}
+.radio input[type="radio"], .checkbox input[type="checkbox"] {position: relative; top: 7px}

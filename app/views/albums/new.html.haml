@@ -1,5 +1,7 @@
-%h1 Nuevo álbum
+%h1.title
+  = page_title! 'Nuevo álbum'
 
-= render 'form'
+.content-default
+  = render 'form'
 
-= link_to 'Regresar', albums_path
+  = link_to 'Regresar', albums_path, class: 'button-back'

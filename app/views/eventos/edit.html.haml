@@ -1,5 +1,7 @@
-%h1 Editando evento
+%h1.title
+  = page_title! 'Editando ' + @evento.nombre
 
-= render 'form'
+.content-default
+  = render 'form'
 
-= link_to 'Regresar', eventos_path
+  = link_to 'Regresar', eventos_path, class: 'button-back'

@@ -11,6 +11,6 @@
     = menu_li('Contacto', 'contactos', new_contacto_path )
   - if current_admin
     = menu_li('Mensajes', 'mensajes', contactos_path )
-    = menu_li('Banners', 'Banners', diapositivas_path)
+    = menu_li('Banners', 'diapositivas', diapositivas_path)
     %li
       = link_to 'Cerrar Sesión', destroy_admin_session_path, method: :delete

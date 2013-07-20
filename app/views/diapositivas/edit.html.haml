@@ -1,6 +1,9 @@
-%h1 Editando Banner
+%h1.title
+  = page_title! 'Nuevo Banner'
 
-= render 'form'
+.content-default
+  = render 'form'
 
-= link_to 'Ver', @diapositiva
-= link_to 'Regresar', diapositivas_path
+  = link_to 'Regresar', diapositivas_path, class: 'button-back'
+
+
