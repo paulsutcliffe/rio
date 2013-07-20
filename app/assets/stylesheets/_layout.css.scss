@@ -3,7 +3,8 @@ h1, h2, h3, h4, h5, h6, legend {color: $yellow; line-height: 100%; margin: 0; te
 font-weight: 300; letter-spacing: 1px }
 li {list-style: none}
 
-form .field input[type="text"], form .field input[type="password"], form .field input[type="email"] {box-shadow: 0 0 0 transparent}
+form .field input[type="text"], form .field input[type="password"], form .field input[type="email"],
+form .fields input[type="submit"] {box-shadow: 0 0 0 transparent}
 
 h1.title,
 h2.title {padding-bottom: 20px; @extend .title-parameters}
@@ -256,18 +257,18 @@ form {
     }
   }
   .field {
-    @include full-width;
+    @include full-width; margin-bottom: 12px;
     label {@extend .main-paragraph; text-transform: uppercase; float: left; width: 80px; text-align: right; padding-right: 15px;
-      padding-bottom: 0; margin-top: 6px;
+      padding-bottom: 0; margin-top: 6px; 
     }
     &.checkbox label {width: auto}
     input[type="text"], input[type="password"], input[type="email"] {
-      border: 0; background: $form; outline: 0; border: 0;
+      border: 0; background: $form; outline: 0; border: 0; margin: 0 !important;
       height: auto; padding: 9px 15px 10px 10px;
       &:focus {background-position: -254px 0}
     }
-    textarea {background: $form; background-position: -5px -40px; max-height: 120px; padding: 9px 15px 10px 10px; outline: 0; border: 0;
-      resize: none;
+    textarea {background: $form; background-position: -5px -40px; max-height: 130px; padding: 9px 15px 10px 10px; outline: 0; border: 0;
+      resize: none; width: 232px;
     }
   }
   .actions {
@@ -390,6 +391,7 @@ btn btn-link
 .content-default li,
 #contactos .button-back {margin-left: 68px}
 
+#contactos.new form {margin-left: 29px }
 
 .edit .field input[type="text"],
 .new .field input[type="text"],
