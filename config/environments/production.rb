@@ -46,7 +46,7 @@ Rio::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['twitlive-min.js', 'jquery-easing/jquery.easing.1.3.js', 'jquery-lavalamp-1.3.5/jquery.lavalamp-1.3.5.min.js', 'jquery-lavalamp-1.3.5/jquery.lavalamp-init.js']
+  config.assets.precompile += ['twitlive-min.js', 'jquery-easing/jquery.easing.1.3.js', 'jquery-lavalamp-1.3.5/jquery.lavalamp-1.3.5.min.js', 'jquery-lavalamp-1.3.5/jquery.lavalamp-init.js', 'jquery-lavalamp-1.3.5/jquery.lavalamp.css']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
