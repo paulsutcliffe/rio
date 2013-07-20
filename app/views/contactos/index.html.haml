@@ -1,6 +1,7 @@
-%h1 Mensajes Recibidos
+%h1.title
+  = page_title! 'Mensajes Recibidos'
 
-%table
+%table.table.table-bordered.table-condensed.table-hover.table-striped
   %tr
     %th Nombre
     %th Email
@@ -14,8 +15,8 @@
       %td= contacto.nombre
       %td= contacto.email
       %td= contacto.telefono
-      %td= contacto.mensaje
-      %td= link_to 'Ver', contacto
-      %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás seguro?' }
+      %td= truncate(contacto.mensaje, :length => 20)
+      %td= link_to 'Ver', contacto, :class => 'button-readmore'
+      %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, :class => 'button-delete'
 
 = will_paginate @contactos

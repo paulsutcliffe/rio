@@ -6,22 +6,18 @@
   .administrate.head
     = link_to 'Nuevo Banner', new_diapositiva_path, class: 'button-create'
 
-%table
-  %tr
-    %th Imagen
-    %th Título
-    %th Link
-    %th Video
-    %th
-    %th
-
+%ul.content-default
   - @diapositivas.each do |diapositiva|
-    %tr
-      %td= image_tag diapositiva.slide_url(:thumb)
-      %td= diapositiva.titulo
-      %td= diapositiva.link
-      %td= diapositiva.video
-      %td= link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'button-create'
-      %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
-
+    %li
+      .multimedia-content
+        = image_tag diapositiva.slide_url(:thumb)
+        = diapositiva.video_html
+      .text-content
+        %h3.title
+          = diapositiva.titulo
+        = link_to diapositiva.link, diapositiva.link, :target => '_blank'
+        - if current_admin
+          .administrate.iterate
+            = link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'button-create'
+            = link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
 

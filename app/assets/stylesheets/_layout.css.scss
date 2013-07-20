@@ -295,6 +295,7 @@ body[id^="devise"] form br {display: none}
 
 
 /* FULL_WIDTH_ */
+.content-default,
 .redes-sociales,
 .rio-presentacion,
 .rio-youtube,
@@ -344,3 +345,28 @@ btn btn-link
 .tweet_text a:hover { color: #B64926; }
 .tweet_text a.profile { color: #3B5998; text-decoration: none; font-weight: bold; }
 .tweet_text span { display: block; color: #999999; }
+
+.content-default li {overflow: hidden; margin-bottom: 40px; padding: 20px; @include box-default;
+  &:nth-of-type(2n+2) {background: $gray-light}
+
+}
+.multimedia-content {float: left;
+  img, iframe {float: left; margin-right: 10px}
+  iframe {width: 200px; height: 80px}
+}
+.text-content {
+  overflow: hidden;
+  a {color: $white}
+}
+
+.table-striped tbody > tr:nth-child(2n+1) > th{
+  background-color: darken($gray-light, 12%); color: $white;
+}
+
+.table-striped tbody > tr:nth-child(1n+2) > td {
+  background-color: darken($gray-light, 8%); color: $white;
+}
+
+.table-striped tbody > tr:nth-child(2n+1) > td {
+  background-color: $gray-light; color: $white;
+}
