@@ -198,8 +198,8 @@ ul.share-menu {
     .ev-nombre {font-size: 40px;
       &:before {content: $ico-ev-nombre; margin-right: 5px; @include absolute(top, left, 3px, 0)}
     }
-    .ev-lugar {font-size: 17px;
-      &:before {content: $ico-ev-lugar; margin: 2px 14px 0 5px; @include absolute(top, left, -3px, 0)}
+    .ev-lugar {font-size: 17px; margin-top: 5px;
+      &:before {content: $ico-ev-lugar; margin: 2px 14px 0 5px; @include absolute(top, left, -8px, 0)}
     }
   }
 
