@@ -42,7 +42,7 @@
 }
 
 .sombra-slider {
-  content: $slider-shadow; position: absolute; top: 100%; left: 0
+  content: $slider-shadow; position: absolute; bottom: -45px; left: -15px
 }
 
 @mixin full-width {

@@ -7,15 +7,17 @@
           %li= msg
 
   .field
-    = f.label :slide, "Imagen"
-    = f.file_field :slide
-  .field
     = f.label :titulo, "Título"
     = f.text_field :titulo
   .field
     = f.label :link
     = f.text_field :link
-  .field
+
+  .field.field-imagen
+    = f.label :slide, "Imagen"
+    = f.file_field :slide
+
+  .field.field-video
     = f.label :video
     = f.text_field :video
   .actions

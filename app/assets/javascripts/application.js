@@ -18,3 +18,14 @@
 //= require bootstrap-carousel
 //
 //= require twitlive-min.js
+
+
+
+$(document).ready(function() {
+ /* video = $('.field-video');
+  imagen = $('.field-imagen');
+  
+
+  video.find('input').hide();*/
+
+});

@@ -8,12 +8,12 @@
   .carousel-inner
     - @diapositivas.each do |slide|
       .item
-        - if current_admin
-          = link_to (image_tag slide.slide_url(:regular)), diapositivas_path
+        - if slide.video?
+          = slide.video_html
         - else
           = image_tag slide.slide_url(:regular)
-        .carousel-caption
-          = link_to slide.titulo, slide.link
+          .carousel-caption
+            = link_to slide.titulo, slide.link
 
   <!-- Carousel nav -->
   = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
