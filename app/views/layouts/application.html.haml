@@ -74,7 +74,7 @@
             = render 'layouts/menu'
           %p.copyright
             = 'Rio Producciones todos los derechos reservados ' + Time.now.year.to_s + ' | '
-            = link_to 'Diseño web y desarrollo web por Kosmyka', 'http://www.kosmyka.com'
+            = link_to 'Diseño web y desarrollo web por Kosmyka', 'http://www.kosmyka.com', target: '_blank'
     #container{:style => 'display: none'}
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
