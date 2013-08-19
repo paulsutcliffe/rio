@@ -14,7 +14,7 @@
         - if current_admin
           .administrate.iterate
             = link_to 'Editar', edit_evento_path(evento), class: 'button-create'
-            = link_to 'Eliminar', evento, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
+            = link_to 'Eliminar', evento, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
 
 = will_paginate @eventos
 

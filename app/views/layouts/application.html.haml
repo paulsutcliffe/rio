@@ -57,6 +57,7 @@
 
     %section#content
       .container
+        = render 'layouts/notices'
         .contratos
           %h2.title Contratos
           = render 'shared/info_contratos'
@@ -66,7 +67,7 @@
       .container
         .footer-top
           = link_to image_tag('logo.png', alt: 'Rio'), root_path, id: 'footer-logo'
-          = link_to image_tag('btn-compartir.png'), '/', target: '_blank', class: 'share-website'
+          = link_to image_tag('btn-compartir.png'), 'https://www.facebook.com/sharer/sharer.php?u=' + request.original_url, target: '_blank', class: 'share-website'
         .footer-bottom
           = render 'shared/share_links'
           %nav.footer-menu
@@ -75,10 +76,4 @@
           %p.copyright
             = 'Rio Producciones todos los derechos reservados ' + Time.now.year.to_s + ' | '
             = link_to 'Diseño web y desarrollo web por Kosmyka', 'http://www.kosmyka.com', target: '_blank'
-    #container{:style => 'display: none'}
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-
-      - if show_title?
-        %h1= yield(:title)
-
+    = render 'shared/google_analytics'
