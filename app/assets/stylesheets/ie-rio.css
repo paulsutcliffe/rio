@@ -1,0 +1,11 @@
+
+.ie .edit .field input[type="text"], .ie .new .field input[type="text"],
+.ie .edit .field input[type="email"], .ie .new .field input[type="email"],
+.ie .edit .field input[type="password"], .ie .new .field input[type="password"] {width: 205px}
+
+
+.ie .edit .field input[type="text"], .ie .new .field input[type="text"],
+.ie .edit .field input[type="email"], .ie .new .field input[type="email"],
+.ie .edit .field input[type="password"], .ie .new .field input[type="password"] {width: 205px}
+
+.ie form .field textarea {width: 212px; height: 113px}
