@@ -7,14 +7,18 @@
     %b Email:
     %span
       = @contacto.email
-    %span.separar 
+    %span.separar
       |
     %b Télefono:
-    
+
     %span
       = @contacto.telefono
   .contacto-block
-    %b Mensaje 
+    %b Fecha
+    .contacto-mensaje-inner
+      = l @contacto.created_at, :format => :short
+  .contacto-block
+    %b Mensaje
     .contacto-mensaje-inner
       = @contacto.mensaje
 

@@ -62,11 +62,8 @@ ActiveRecord::Schema.define(:version => 20130619170625) do
     t.string   "nombre"
     t.string   "lugar"
     t.date     "fecha"
-    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "eventos", ["slug"], :name => "index_eventos_on_slug", :unique => true
 
 end

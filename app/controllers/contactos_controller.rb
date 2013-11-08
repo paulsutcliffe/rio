@@ -22,6 +22,6 @@ class ContactosController < InheritedResources::Base
   end
 
   def index
-    @contactos = Contacto.order("created_at ASC").paginate(:page => params[:page], :per_page => 30)
+    @contactos = Contacto.order("created_at DESC").paginate(:page => params[:page], :per_page => 30)
   end
 end
