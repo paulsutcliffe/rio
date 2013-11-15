@@ -197,6 +197,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    unicorn-worker-killer (0.4.2)
+      unicorn (~> 4)
     warden (1.2.1)
       rack (>= 1.0)
     websocket (1.0.7)
@@ -234,4 +236,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn
+  unicorn-worker-killer
   will_paginate
